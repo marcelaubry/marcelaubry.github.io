@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcel Aubry · Forward Deployed Engineer</title>
+  <meta name="description" content="Marcel Aubry: Forward Deployed Engineer at Blitzy, ex-GEICO software engineer, Boston University computer engineering grad, and 4:02 miler.">
+  <meta property="og:title" content="Marcel Aubry">
+  <meta property="og:description" content="Forward Deployed Engineer at Blitzy. Dive in.">
+  <meta property="og:image" content="https://marcelaubry.github.io/images/marcel-pixel.png">
+  <link rel="icon" href="images/marcel-pixel.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-zone="surface">
+  <div class="ocean" aria-hidden="true">
+    <div class="rays"></div>
+    <canvas class="snow"></canvas>
+    <div class="vignette"></div>
+  </div>
+
+  <nav class="nav" aria-label="Sections">
+    <a href="#top" aria-label="Surface">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+    </a>
+    <a href="#about">About</a>
+    <a href="#experience">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#running">Running</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="dive" aria-hidden="true">
+    <div class="line"></div>
+    <div class="diver">
+      <div class="lamp"></div>
+      <img class="sprite" data-sprite="diver" alt="">
+    </div>
+  </div>
+
+  <aside class="gauge" aria-live="off">
+    <span class="label">Depth</span>
+    <span class="depth"><span id="depth">0</span> m</span>
+    <span class="zone-name" id="zone">Surface</span>
+    <span class="pressure"><span id="pressure">1</span> atm</span>
+  </aside>
+
+  <main>
+    <section class="hero" id="top" data-zone="surface">
+      <canvas class="scene" aria-hidden="true"></canvas>
+      <img class="sprite boat" data-sprite="boat" alt="" aria-hidden="true">
+      <div class="hero-text">
+        <p class="eyebrow">Forward Deployed Engineer / 2026</p>
+        <h1>I'm Marcel <img class="avatar" src="images/marcel-pixel.png" alt="Pixel-art portrait of Marcel Aubry"></h1>
+        <p class="lede">I build 0→1 products, ship them into enterprise environments, and used to run very fast in circles.</p>
+        <p class="hint">Scroll to dive <span>↓</span></p>
+      </div>
+    </section>
+
+    <section class="zone" id="about" data-zone="sunlight" data-depth="20">
+      <div class="content">
+        <p class="eyebrow">About</p>
+        <h2>Hi, I'm Marcel.</h2>
+        <p>I'm a Forward Deployed Engineer at <a href="https://blitzy.com">Blitzy</a> in Cambridge, MA, where I was one of the founding FDEs. I take ambiguous enterprise requirements and turn them into production software, using AI-driven development to move a lot faster than teams are used to.</p>
+        <p>Before that I shipped customer-facing features at GEICO and built healthcare data pipelines. I studied Computer Engineering at Boston University: a B.S. cum laude, then an M.S. in Electrical &amp; Computer Engineering.</p>
+        <p>I grew up in Toronto and speak English and French. At BU I captained the Division I track &amp; cross-country team. I'm a 4:02 miler and still hold the Canadian U18 1000m record.</p>
+      </div>
+    </section>
+
+    <section class="zone" id="experience" data-zone="twilight" data-depth="200">
+      <div class="content">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've worked.</h2>
+
+        <article class="job">
+          <header><h3><a href="https://blitzy.com">Blitzy</a></h3><span class="when">Jun 2026 — Present</span></header>
+          <p class="role">Forward Deployed Engineer, Enterprise Transformation</p>
+          <p>A founding FDE who helped write the enterprise engagement playbook. I led the carve-out of a portfolio optimization engine from a monolith into an Azure microservice, and rolled the Blitzy platform out to a client's scrum teams, reaching 75%+ adoption and 5× faster software development.</p>
+        </article>
+
+        <article class="job">
+          <header><h3><a href="https://www.geico.com">GEICO</a></h3><span class="when">Mar 2024 — Jun 2026</span></header>
+          <p class="role">Software Engineer 2 &amp; 1, Client Acquisition &amp; Sales</p>
+          <p>Led an A/B experiment that cut time to quote by 10% and raised quote completion by 3%+, worth $10M+ in incremental annual premium. Built customer-facing features in C# and React across the digital acquisition funnel, carried the on-call pager with Splunk, Grafana and Quantum Metrics, and mentored in GEICO's Technology Development Program.</p>
+        </article>
+
+        <article class="job">
+          <header><h3>Decision Point Healthcare (mPulse)</h3><span class="when">Aug 2023 — Feb 2024</span></header>
+          <p class="role">Data Engineer, Data Operations</p>
+          <p>Validated end-to-end ETL workflows for health plan clients, from FTP ingestion and staging through ML scoring. I automated them with Python, PowerShell and SQL stored procedures, and kept them running on Jenkins.</p>
+        </article>
+
+        <article class="job">
+          <header><h3>Boston University</h3><span class="when">Jan — May 2023</span></header>
+          <p class="role">Teaching Assistant, Intro to Software Engineering</p>
+        </article>
+
+        <article class="job">
+          <header><h3>Bell</h3><span class="when">Summers 2021 &amp; 2022</span></header>
+          <p class="role">Network Intern, then Software Development Intern</p>
+        </article>
+
+        <h3 class="sub">Education</h3>
+        <ul class="plain">
+          <li><strong>Boston University</strong>, M.S. Electrical &amp; Computer Engineering, 2023 (GPA 3.95)</li>
+          <li><strong>Boston University</strong>, B.S. Computer Engineering, Technology Innovation, 2022 (cum laude)</li>
+        </ul>
+
+        <h3 class="sub">Toolkit</h3>
+        <p class="tags">C# · SQL · Python · C/C++ · React · Azure · LangSmith · Claude · Splunk · Grafana · Jenkins · PowerShell · LaunchDarkly · Git</p>
+      </div>
+    </section>
+
+    <section class="zone" id="projects" data-zone="midnight" data-depth="1000">
+      <div class="content">
+        <p class="eyebrow">Projects</p>
+        <h2>Things I've built.</h2>
+        <a class="card" href="https://splits.info">
+          <h3>splits.info <span class="ext">↗</span></h3>
+          <p>Workout summaries for Strava. It detects interval workouts from lap data and writes clean splits into the activity description automatically.</p>
+          <p class="tags">TypeScript · Python · ML · GCP</p>
+        </a>
+        <a class="card" href="https://github.com/marcelaubry/superset-devin-remediator">
+          <h3>superset-devin-remediator <span class="ext">↗</span></h3>
+          <p>Event-driven issue remediation for Apache Superset using the Devin API.</p>
+          <p class="tags">Python</p>
+        </a>
+        <a class="card" href="https://github.com/marcelaubry/CS411Group2">
+          <h3>CS411 Group 2 <span class="ext">↗</span></h3>
+          <p>Final project for Boston University CS411, Software Engineering.</p>
+          <p class="tags">JavaScript</p>
+        </a>
+        <a class="card" href="https://github.com/marcelaubry/EC601">
+          <h3>EC601 <span class="ext">↗</span></h3>
+          <p>Coursework for BU EC601, Product Design in ECE.</p>
+          <p class="tags">Python</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="zone" id="running" data-zone="abyss" data-depth="4000">
+      <div class="content">
+        <p class="eyebrow">Running</p>
+        <h2>Under pressure.</h2>
+        <p>I ran middle distance for Boston University from 2018 to 2023 and captained the team. Before BU, I won the 1500m at the 2017 Canadian Youth Indoor Championships and set the Canadian U18 1000m record (2:27.89).</p>
+        <div class="stats">
+          <div class="stat"><span class="time">1:52.11</span><span class="event">800m</span></div>
+          <div class="stat"><span class="time">3:45.75</span><span class="event">1500m</span></div>
+          <div class="stat"><span class="time">4:02.71</span><span class="event">Mile</span></div>
+          <div class="stat"><span class="time">24:16.7</span><span class="event">8K XC</span></div>
+          <div class="stat"><span class="time">31:32.8</span><span class="event">10K XC</span></div>
+        </div>
+        <ul class="plain">
+          <li>Captain, BU men's track &amp; field / cross-country (NCAA Division I)</li>
+          <li>Second Team All-Patriot League, Indoors 2023 (4x800m, DMR)</li>
+          <li>Part of BU's first Patriot League podium in the 4x800m (2023)</li>
+          <li>Academic All-Patriot League; Patriot League Academic Honor Roll</li>
+        </ul>
+        <p class="small">Results on <a href="https://worldathletics.org/athletes/canada/marcel-aubry-14757484">World Athletics</a>, <a href="https://tf.tfrrs.org/athletes/6899317/Boston_U/Marcel_Aubry.html">TFRRS</a> and <a href="https://goterriers.com/sports/mens-track-and-field/roster/marcel-aubry/23218">BU Athletics</a>.</p>
+      </div>
+    </section>
+
+    <section class="zone" id="contact" data-zone="hadal" data-depth="6000">
+      <div class="content">
+        <p class="eyebrow">Contact</p>
+        <h2>You made it to the bottom.</h2>
+        <p>10,935 m: Challenger Deep, the deepest known point in the ocean. Thanks for diving all the way down. Say hi:</p>
+        <div class="socials">
+          <a href="mailto:marcel-aubry@outlook.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+          <a href="https://github.com/marcelaubry" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/marcel-aubry" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="floor">
+        <canvas class="seabed" aria-hidden="true"></canvas>
+        <img class="sprite chest" data-sprite="chest" alt="" aria-hidden="true">
+        <footer>
+          <p>Built with care, under a lot of pressure.</p>
+          <p class="small">© <span id="year">2026</span> Marcel Aubry · <a href="https://github.com/marcelaubry/marcelaubry.github.io">Source</a></p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/sprites.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
