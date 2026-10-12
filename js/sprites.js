@@ -18,22 +18,23 @@ const PALETTE = {
   X: '#121a24', x: '#24334a',
   C: '#66ffe0',
   Q: '#f4c7d0', q: '#d99aab',
+  D: '#c9823f', d: '#8f5626', H: '#45455c',
 };
 
 const SPRITES = {
-  diver: [
-    '..........KKKKKKKKK.........',
-    '.........KYYYYYYYYYK........',
-    '.........KyyyyyyyyyK..KKKK..',
-    'FF......KKKKKKKKKKKKKKmmmmK.',
-    'FfF..KKKSSSSSSSSSSSSSKMMMmK.',
-    '.FfFKSSSSSSSSSSSSSSSSSKMMMmK',
-    '..FFSsssssSSSSSSSSSSSSKmmmmK',
-    '.FfFKSSSSSSSSSSSSKSSSSKPPPK.',
-    'FfF..KKKSSSSSSSKKSSSSSKKKK..',
-    'FF......KKKKKKK.KSPSSK......',
-    '................KKPPK.......',
-    '.................KKK........',
+  dachshund: [
+    '....................KKKK....',
+    '...................KkkkkK...',
+    '..................KkkkDkK...',
+    'K...KKKKKKKKKKKKKKkkkkWkKKKK',
+    'kK.KkHHHHHHHHkkkkHHkkkkDDDDX',
+    '.kKkkkkkkkkkkkkkkHHHkkdDDDK.',
+    '.kkkkkkkkkkkkkkkkHHHHkKKKK..',
+    'Hk.KkkkkkkkkkkkkkkHHHkK.....',
+    '...KkkdDkkkkkkkkkkHHkDDK....',
+    '...kKDDKkHkHkHkkkKDDDK......',
+    '....KDDK.k.k.k...KDDK.......',
+    '....KKKK.........KKKK.......',
   ],
   boat: [
     '..............K.................',
