@@ -1,5 +1,6 @@
 (() => {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const reduceMotion = () => motionQuery.matches;
   const pxSize = () => (window.innerWidth <= 700 ? 3 : 4);
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
@@ -281,6 +282,7 @@
     let active = navLinks[0];
     sections.forEach((s, i) => { if (probe >= s.offsetTop) active = navLinks[i + 1]; });
     navLinks.forEach((a) => a.classList.toggle('active', a === active));
+    if (reduceMotion()) drawSnow();
   }
   function requestUpdate() {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
@@ -288,6 +290,7 @@
 
   // ---------- bubbles ----------
   function spawnBubbles() {
+    if (reduceMotion()) { document.querySelectorAll('.bubble').forEach((el) => el.remove()); return; }
     if (document.hidden) return;
     const rect = diver.getBoundingClientRect();
     const up = diver.classList.contains('up');
@@ -322,7 +325,7 @@
       sctx.clearRect(0, 0, snow.width, snow.height);
       const bio = clamp((depth - 1000) / 1500, 0, 1);
       flakes.forEach((f) => {
-        if (!reduceMotion) {
+        if (!reduceMotion()) {
           f.y += f.v;
           f.x += Math.sin(f.y / 40) * 0.15;
           if (f.y > snow.height) { f.y = -4; f.x = Math.random() * snow.width; }
@@ -331,7 +334,10 @@
         sctx.fillRect(Math.round(f.x), Math.round(f.y), f.s, f.s);
       });
     }
-    if (!reduceMotion) requestAnimationFrame(drawSnow);
+  }
+  function snowLoop() {
+    if (!reduceMotion()) drawSnow();
+    requestAnimationFrame(snowLoop);
   }
 
   function layout() {
@@ -341,17 +347,14 @@
     sizeSnow();
     buildAnchors();
     update();
-    if (reduceMotion) drawSnow();
   }
 
-  window.addEventListener('scroll', () => { requestUpdate(); if (reduceMotion) drawSnow(); }, { passive: true });
+  window.addEventListener('scroll', requestUpdate, { passive: true });
   let resizeTimer;
   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 120); });
   window.addEventListener('load', buildAnchors);
   if (document.fonts) document.fonts.ready.then(layout);
   layout();
-  if (!reduceMotion) {
-    setInterval(spawnBubbles, 1100);
-    requestAnimationFrame(drawSnow);
-  }
+  setInterval(spawnBubbles, 1100);
+  requestAnimationFrame(snowLoop);
 })();
