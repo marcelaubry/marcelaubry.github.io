@@ -348,6 +348,7 @@
   let resizeTimer;
   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 120); });
   window.addEventListener('load', buildAnchors);
+  if (document.fonts) document.fonts.ready.then(layout);
   layout();
   if (!reduceMotion) {
     setInterval(spawnBubbles, 1100);
