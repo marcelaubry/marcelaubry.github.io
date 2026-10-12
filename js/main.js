@@ -25,6 +25,7 @@
 
   // ---------- hero scene ----------
   const scene = document.querySelector('.scene');
+  const heroText = document.querySelector('.hero-text');
   function drawScene() {
     const P = pxSize();
     const W = Math.ceil(scene.clientWidth / P);
@@ -80,16 +81,24 @@
     const seaBand = Math.ceil((H - horizon) / sea.length);
     sea.forEach((col, i) => { c.fillStyle = col; c.fillRect(0, horizon + i * seaBand, W, seaBand + 1); });
 
-    // sun glitter + waves
+    // sun glitter + waves, kept clear of the hero text
+    const sr = scene.getBoundingClientRect();
+    const tr = heroText.getBoundingClientRect();
+    const pad = 6;
+    const tx0 = (tr.left - sr.left) / P - pad, tx1 = (tr.right - sr.left) / P + pad;
+    const ty0 = (tr.top - sr.top) / P - pad, ty1 = (tr.bottom - sr.top) / P + pad;
+    const behindText = (x, y, w) => y >= ty0 && y <= ty1 && x + w >= tx0 && x <= tx1;
     c.fillStyle = 'rgba(255,240,200,0.7)';
     for (let y = horizon + 2; y < H * 0.75; y += 3) {
       const w = 2 + Math.round(r() * 8);
-      c.fillRect(sunX - w / 2 + Math.round((r() - 0.5) * 10), y, w, 1);
+      const x = sunX - w / 2 + Math.round((r() - 0.5) * 10);
+      if (!behindText(x, y, w)) c.fillRect(x, y, w, 1);
     }
     c.fillStyle = 'rgba(255,255,255,0.35)';
     for (let i = 0; i < W * 0.6; i++) {
       const y = horizon + 3 + Math.round(Math.pow(r(), 1.4) * (H - horizon - 6));
-      c.fillRect(Math.round(r() * W), y, 2 + Math.round(r() * 5), 1);
+      const x = Math.round(r() * W), w = 2 + Math.round(r() * 5);
+      if (!behindText(x, y, w)) c.fillRect(x, y, w, 1);
     }
   }
 
